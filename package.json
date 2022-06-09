@@ -1,0 +1,20 @@
+{
+  "name": "projeto-cotemig",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd page && npm install && npm run build"
+  },
+  "keywords": [],
+  "type": "module",
+  "author": "João Lucas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "engines": {
+    "node": "v18.3.0"
+  }
+}
