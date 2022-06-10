@@ -7,13 +7,11 @@ interface FilesProps {
 }
 
 export function Files(props: FilesProps) {
-    console.log(props.files)
     return (
         <ContainerAll>
             <FilesContainer>
                 {
                     (!props.files ? '' : props.files.map(file => {
-                        console.log(file);
                         return (
                             <File>
                                 <ImageFile src={"images/" + ImageService.getImageName(file.type)} />
