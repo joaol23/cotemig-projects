@@ -7,8 +7,7 @@ export function SearchComponent({ onChange, files }: any) {
     function getTestBabi(event: React.FormEvent<HTMLInputElement>) {
         let valueCurrent = event.currentTarget.value;
         if (valueCurrent !== '') {
-            let newFiles = files.filter((file: any) => file.fileState.Sigla.includes(valueCurrent))
-            console.log(newFiles);
+            let newFiles = files.filter((file: any) => file.fileState.Sigla.includes(valueCurrent));
             onChange(newFiles);
             return;
         }

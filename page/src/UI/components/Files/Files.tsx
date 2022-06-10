@@ -7,6 +7,19 @@ interface FilesProps {
 }
 
 export function Files(props: FilesProps) {
+    const compare = (a: FileInterface, b: FileInterface) => {
+        let comparison = 0;
+        if (a.countCities > b.countCities) {
+          comparison = -1;
+        } else if (a.countCities < b.countCities) {
+          comparison = 1;
+        }
+        return comparison;
+    }
+
+    if (props.files) {
+        props.files.sort(compare)
+    }
     return (
         <ContainerAll>
             <FilesContainer>
