@@ -5,11 +5,14 @@ const path = require('path');
 const express = require("express");
 
 import { checkFilesExists, getFiles } from './handleFiles/readFiles.js';
+import * as url from 'url';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
-// app.use(express.static(path.resolve(__dirname, '../page/build')));
+app.use(express.static(path.resolve(__dirname, '../page/build')));
 
 app.get("/api", (req, res) => {
   res.json({ message: "Hello from server!" });

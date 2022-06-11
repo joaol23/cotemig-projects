@@ -5,9 +5,9 @@ import { Search, TextFilter, FilterContainer } from "./Search.style";
 export function SearchComponent({ onChange, files }: any) {
 
     function getTestBabi(event: React.FormEvent<HTMLInputElement>) {
-        let valueCurrent = event.currentTarget.value;
+        let valueCurrent = event.currentTarget.value.toUpperCase();
         if (valueCurrent !== '') {
-            let newFiles = files.filter((file: any) => file.fileState.Sigla.includes(valueCurrent));
+            let newFiles = files.filter((file: any) => file.fileState.Sigla.toUpperCase().includes(valueCurrent));
             onChange(newFiles);
             return;
         }

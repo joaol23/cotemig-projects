@@ -15,14 +15,14 @@ export function FilesPage() {
       .then((data) => { setDataFiles(data.files); setDatafilesDataBase(data.files); });
   }, []);
 
-  const changeValueFiles = (newValue: FileInterface[]) => {
+  const changeValueFiles = (newValue: FileInterface[]): void => {
     setDataFiles(newValue);
   }
 
   return (
     <Container>
       <SearchComponent onChange={changeValueFiles} files={filesDataBase} />
-      <Files files={files} />
+      <Files changeDataFiles={changeValueFiles} files={files} />
     </Container>
   );
 }

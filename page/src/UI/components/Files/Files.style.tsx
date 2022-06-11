@@ -21,6 +21,10 @@ export const File = styled('div')`
     border-radius: ${({ theme }) => theme.spacing(1)};
     box-shadow: 2px 2px 3px gray;
     background-color: white;
+    
+    ${({ theme }) => theme.breakpoints.down('md')}{        
+        width: 50%;
+    }
 `;
 
 export const ImageFile = styled('img')`
