@@ -23,20 +23,18 @@ export function Files({ files, changeDataFiles }: FilesProps) {
         return comparison;
     }
 
-    if (files) {
-        files.sort(compare)
-    }
-
     function changeOrderFiles() {
         if (files) {
-            changeDataFiles(files.sort(compare))
             switchOrder = !switchOrder;
+            files.map(file => file.order = (switchOrder ? "ASC" : "DESC"));
+            let newFiles = files.sort(compare);
+            changeDataFiles(newFiles);
         }
     }
 
     return (
         <ContainerAll>
-            <Button disabled variant={'contained'} color="secondary" onClick={changeOrderFiles} startIcon={<MobiledataOffIcon />}>Cidades</Button>
+            <Button variant={'contained'} color="secondary" onClick={changeOrderFiles} startIcon={<MobiledataOffIcon />}>Cidades</Button>
             <FilesContainer>
                 {
                     (!files ? '' : files.map(file => {

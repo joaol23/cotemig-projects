@@ -1,5 +1,6 @@
 import { Search, TextFilter, FilterContainer } from "./Search.style";
 import { FileInterface } from "../../../data/@types/FileInterface";
+import { TextService } from '../../../data/services/Text/Text';
 
 type SearchProps = {
     files?: FileInterface[],
@@ -9,9 +10,9 @@ type SearchProps = {
 export function SearchComponent({ onChange, files }: SearchProps) {
 
     function getTestBabi(event: React.FormEvent<HTMLInputElement>) {
-        let valueCurrent = event.currentTarget.value.toUpperCase();
+        let valueCurrent = TextService.removeAccent(event.currentTarget.value.toUpperCase());
         if (valueCurrent !== '') {
-            let newFiles = !files ? [] : files.filter((file: any) => file.fileState.Sigla.toUpperCase().includes(valueCurrent));
+            let newFiles = !files ? [] : files.filter((file: any) => file.fileState.Sigla.toUpperCase().includes(valueCurrent) || TextService.removeAccent(file.fileState.Nome.toUpperCase()).includes(valueCurrent));
             onChange(newFiles);
             return;
         }

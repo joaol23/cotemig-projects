@@ -30,10 +30,25 @@ export async function getFiles() {
             fileName: fileName,
             fileState: fileState,
             countCities: countCitiesByState,
-            type: "json"
+            type: "json",
+            order: "DESC"
         })
     })
+    files.sort(compareOrder);
     return files;
+}
+
+function compareOrder(a, b) {
+    let comparison = 0, switchOrder;
+
+    a.order == "DESC" || b.order == "DESC" ? switchOrder = false : switchOrder = true;
+    if (a.countCities > b.countCities) {
+        comparison = (switchOrder ? 1 : -1);
+    } else if (a.countCities < b.countCities) {
+        comparison = (switchOrder ? -1 : 1);
+    }
+
+    return comparison;
 }
 
 export async function getPathFileById(idFile) {

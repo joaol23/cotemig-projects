@@ -2,7 +2,8 @@ export interface FileInterface {
     fileName: string,
     fileState: State,
     countCities: number,
-    type: string
+    type: string,
+    order: string,
 }
 
 interface State {
