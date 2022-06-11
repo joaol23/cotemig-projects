@@ -2,15 +2,22 @@ import fs from 'fs';
 import { createFilterStateFiles } from './writeFiles.js';
 import { pathApiFiles, pathFilterFiles } from '../database/api/config.js'
 
+const PATH_STATE_FILES = 'server/database/filter-state';
+
 export async function checkFilesExists() {
-    let files = await isDirEmpty('server/database/filter-state');
+    let files = await getAllFilesFromDir(PATH_STATE_FILES);
     if (files.length === 0) {
         createFilterStateFiles();
     }
 }
 
+export async function readFile(path) {
+    let contentFile = JSON.parse(await fs.readFileSync(path));
+    return contentFile;
+}
+
 export async function getFiles() {
-    let filesNames = await isDirEmpty('server/database/filter-state');
+    let filesNames = await getAllFilesFromDir(PATH_STATE_FILES);
     let states = JSON.parse(await fs.readFileSync(pathApiFiles + 'states.json'));
 
     let files = [];
@@ -29,8 +36,13 @@ export async function getFiles() {
     return files;
 }
 
+export async function getPathFileById(idFile) {
+    let files = await getAllFilesFromDir(PATH_STATE_FILES)
+    let file = files.filter(file => file.split('.')[0].split("_")[1] == idFile)
+    return pathFilterFiles + file[0];
+}
 
-function isDirEmpty(dirname) {
+function getAllFilesFromDir(dirname) {
     return fs.promises.readdir(dirname).then(files => {
         return files;
     });

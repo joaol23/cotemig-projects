@@ -10,3 +10,9 @@ interface State {
     Sigla: string,
     Nome: string
 }
+
+export type City = {
+    ID: string,
+    Nome: string,
+    Estado: number
+}

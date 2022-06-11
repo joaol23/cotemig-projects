@@ -1,13 +1,17 @@
 import { Search, TextFilter, FilterContainer } from "./Search.style";
+import { FileInterface } from "../../../data/@types/FileInterface";
 
+type SearchProps = {
+    files?: FileInterface[],
+    onChange: (newValue?: FileInterface[]) => void,
+}
 
-
-export function SearchComponent({ onChange, files }: any) {
+export function SearchComponent({ onChange, files }: SearchProps) {
 
     function getTestBabi(event: React.FormEvent<HTMLInputElement>) {
         let valueCurrent = event.currentTarget.value.toUpperCase();
         if (valueCurrent !== '') {
-            let newFiles = files.filter((file: any) => file.fileState.Sigla.toUpperCase().includes(valueCurrent));
+            let newFiles = !files ? [] : files.filter((file: any) => file.fileState.Sigla.toUpperCase().includes(valueCurrent));
             onChange(newFiles);
             return;
         }
