@@ -15,7 +15,7 @@ export function SearchComponent({ onChange, files }: SearchProps) {
             let newFiles = !files ? [] : files.filter((file: any) => file.fileState.Sigla.toUpperCase().includes(valueCurrent) || TextService.removeAccent(file.fileState.Nome.toUpperCase()).includes(valueCurrent));
             onChange(newFiles);
             return;
-        }
+        }   
         onChange(files);
     }
 
