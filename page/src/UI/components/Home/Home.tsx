@@ -17,7 +17,7 @@ export function Home() {
         <Container>
             {
                 !linksMenu ? '' : linksMenu.map((link) => (
-                    <Link to='/files-states' key={link.id} style={{ textDecoration: 'none', borderRadius: "25px", color: "white", width: '50%', border: '2px solid black' }}>
+                    <Link to='/files-states' key={link.id} style={{ textDecoration: 'none', borderRadius: "25px", color: "white", width: '50%', border: '2px solid black', margin: '25px 0'}}>
                         <LinksMenu>
                             <ImageMenu src={"images/" + link.image} />
                             <ContainerInfo>

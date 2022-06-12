@@ -3,8 +3,9 @@ import { styled } from "@mui/material";
 export const Container = styled('div')`
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 50vh;
+    margin: 15px 0;
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
