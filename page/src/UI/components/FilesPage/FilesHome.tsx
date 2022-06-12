@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Files } from "../Files/Files";
 import { SearchComponent } from "../Search/Search";
 import { FileInterface } from "../../../data/@types/FileInterface";
@@ -15,9 +15,10 @@ export function FilesPage() {
       .then((data) => { setDataFiles(data.files); setDatafilesDataBase(data.files); });
   }, []);
 
-  const changeValueFiles = (newValue?: FileInterface[]): void => {
-    setDataFiles(newValue);
+  function changeValueFiles(newValue?: FileInterface[]): void {
+    setDataFiles(() => newValue);
   }
+
 
   return (
     <Container>

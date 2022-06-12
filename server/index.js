@@ -1,4 +1,5 @@
 import { createRequire } from 'module'
+import { pathMenu } from './database/api/config.js'
 const require = createRequire(import.meta.url);
 
 const path = require('path');
@@ -18,6 +19,11 @@ app.get("/arquivos-estados", async (req, res) => {
   await checkFilesExists()
   let files = await getFiles();
   res.json({ files: files });
+})
+
+app.get("/menu", async (req, res) => {
+  let routes = await readFile(pathMenu);
+  res.json({ links: routes });
 })
 
 app.get("/arquivo-detalhes/:id", async (req, res) => {
