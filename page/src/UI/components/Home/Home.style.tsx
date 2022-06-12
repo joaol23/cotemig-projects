@@ -33,6 +33,10 @@ export const ImageMenu = styled('img')`
     height: 100%;
     margin: 5px 20px;
     object-fit: cover;
+
+    ${({ theme }) => theme.breakpoints.down('md')}{        
+        display: none;
+    }
 `;
 
 export const ContainerInfo = styled('div')`
@@ -42,6 +46,11 @@ export const ContainerInfo = styled('div')`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    ${({ theme }) => theme.breakpoints.down('md')}{      
+        border-left: hidden;
+        width: 100%;
+    }
 `;
 
 export const TitleMenu = styled('h2')`
