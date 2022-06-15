@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Files } from "../Files/Files";
 import { SearchComponent } from "../Search/Search";
 import { FileInterface } from "../../../data/@types/FileInterface";
@@ -22,7 +22,7 @@ export function FilesPage() {
 
   return (
     <Container>
-      <SearchComponent onChange={changeValueFiles} files={filesDataBase} />
+      <SearchComponent onChange={changeValueFiles} files={filesDataBase} options={['fileName', ['fileState', 'Sigla'], ['fileState', 'Nome'], ['fileState', 'Capital'], ['fileState', 'Zone']]} />
       <Files changeDataFiles={changeValueFiles} files={files} />
     </Container>
   );
