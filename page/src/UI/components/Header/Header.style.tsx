@@ -2,13 +2,13 @@ import { styled } from "@mui/material";
 
 export const HeaderContainer = styled('div')`
     width: 100%;
-    height: 90px;
+    height: 110px;
     box-shadow: 2px 2px 2px rgb(230, 230, 230);
 `
 
 export const LogoContainer = styled('div')`
     width: 100%;
-    height: 90px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

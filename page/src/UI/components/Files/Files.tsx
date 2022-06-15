@@ -1,9 +1,10 @@
-import { ContainerAll, FilesContainer, File, ImageFile, InfoContainer, TextFile } from "./Files.style";
+import { ContainerAll, FilesContainer, File, ImageFile, SideInfoContainer, InfoContainer, TextFile } from "./Files.style";
 import { FileInterface } from "../../../data/@types/FileInterface";
 import { ImageService } from "../../../data/services/Images/Images";
 import { Button } from "@mui/material"
 import MobiledataOffIcon from '@mui/icons-material/MobiledataOff';
 import { Link } from 'react-router-dom';
+import { ColoursService } from '../../../data/services/Colours/Colours';
 
 type FilesProps = {
     files?: FileInterface[],
@@ -34,7 +35,7 @@ export function Files({ files, changeDataFiles }: FilesProps) {
 
     return (
         <ContainerAll>
-            <Button variant={'contained'} title="Não ta funcionando :(" color="secondary" onClick={changeOrderFiles} startIcon={<MobiledataOffIcon />}>Cidades</Button>
+            <Button variant={'contained'} disabled title="Não ta funcionando :(" color="secondary" onClick={changeOrderFiles} startIcon={<MobiledataOffIcon />}>Cidades</Button>
             <FilesContainer>
                 {
                     (!files ? '' : files.map(file => {
@@ -42,9 +43,12 @@ export function Files({ files, changeDataFiles }: FilesProps) {
                             <Link to={'/details-file/' + file.fileState.ID} key={file.fileState.ID} style={{ textDecoration: 'none', color: '#000000' }}>
                                 <File>
                                     <ImageFile src={"images/" + ImageService.getImageName(file.type)} />
-                                    <InfoContainer>
-                                        <TextFile>{file.fileName}</TextFile>
-                                        <TextFile>Cidades: {file.countCities}</TextFile>
+                                    <InfoContainer style={{ backgroundColor: ColoursService.getColourByZone(file.fileState.Zone)}}>
+                                        <SideInfoContainer>
+                                            <TextFile>{file.fileName}</TextFile>
+                                            <TextFile>Cidades: {file.countCities}</TextFile>
+                                        </SideInfoContainer>
+                                        <TextFile>Capital: {file.fileState.Capital}</TextFile>
                                     </InfoContainer>
                                 </File>
                             </Link>

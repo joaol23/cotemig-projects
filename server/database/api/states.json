@@ -2,136 +2,190 @@
 	{
 		"ID": "1",
 		"Sigla": "AC",
-		"Nome": "Acre"
+		"Nome": "Acre",
+		"Capital": "Rio Branco",
+		"Zone": "Norte"
 	},
 	{
 		"ID": "2",
 		"Sigla": "AL",
-		"Nome": "Alagoas"
+		"Nome": "Alagoas",
+		"Capital": "Maceió",
+		"Zone": "Nordeste"
 	},
 	{
 		"ID": "3",
 		"Sigla": "AM",
-		"Nome": "Amazonas"
+		"Nome": "Amazonas",
+		"Capital": "Manaus",
+		"Zone": "Norte"
 	},
 	{
 		"ID": "4",
 		"Sigla": "AP",
-		"Nome": "Amapá"
+		"Nome": "Amapá",
+		"Capital": "Macapá",
+		"Zone": "Norte"
 	},
 	{
 		"ID": "5",
 		"Sigla": "BA",
-		"Nome": "Bahia"
+		"Nome": "Bahia",
+		"Capital": "Salvador",
+		"Zone": "Nordeste"
 	},
 	{
 		"ID": "6",
 		"Sigla": "CE",
-		"Nome": "Ceará"
+		"Nome": "Ceará",
+		"Capital": "Fortaleza",
+		"Zone": "Nordeste"
 	},
 	{
 		"ID": "7",
 		"Sigla": "DF",
-		"Nome": "Distrito Federal"
+		"Nome": "Distrito Federal",
+		"Capital": "Brasília",
+		"Zone": "Centro-Oeste"
 	},
 	{
 		"ID": "8",
 		"Sigla": "ES",
-		"Nome": "Espírito Santo"
+		"Nome": "Espírito Santo",
+		"Capital": "Vitória",
+		"Zone": "Sudeste"
 	},
 	{
 		"ID": "9",
 		"Sigla": "GO",
-		"Nome": "Goiás"
+		"Nome": "Goiás",
+		"Capital": "Goiânia",
+		"Zone": "Centro-Oeste"
 	},
 	{
 		"ID": "10",
 		"Sigla": "MA",
-		"Nome": "Maranhão"
+		"Nome": "Maranhão",
+		"Capital": "São Luís",
+		"Zone": "Nordeste"
 	},
 	{
 		"ID": "11",
 		"Sigla": "MG",
-		"Nome": "Minas Gerais"
+		"Nome": "Minas Gerais",
+		"Capital": "Belo Horizonte",
+		"Zone": "Sudeste"
 	},
 	{
 		"ID": "12",
 		"Sigla": "MS",
-		"Nome": "Mato Grosso do Sul"
+		"Nome": "Mato Grosso do Sul",
+		"Capital": "Campo Grande",
+		"Zone": "Centro-Oeste"
 	},
 	{
 		"ID": "13",
 		"Sigla": "MT",
-		"Nome": "Mato Grosso"
+		"Nome": "Mato Grosso",
+		"Capital": "Cuiabá",
+		"Zone": "Centro-Oeste"
 	},
 	{
 		"ID": "14",
 		"Sigla": "PA",
-		"Nome": "Pará"
+		"Nome": "Pará",
+		"Capital": "Belém",
+		"Zone": "Norte"
 	},
 	{
 		"ID": "15",
 		"Sigla": "PB",
-		"Nome": "Paraíba"
+		"Nome": "Paraíba",
+		"Capital": "João Pessoa",
+		"Zone": "Nordeste"
 	},
 	{
 		"ID": "16",
 		"Sigla": "PE",
-		"Nome": "Pernambuco"
+		"Nome": "Pernambuco",
+		"Capital": "Recife",
+		"Zone": "Nordeste"
 	},
 	{
 		"ID": "17",
 		"Sigla": "PI",
-		"Nome": "Piauí"
+		"Nome": "Piauí",
+		"Capital": "Teresina",
+		"Zone": "Nordeste"
 	},
 	{
 		"ID": "18",
 		"Sigla": "PR",
-		"Nome": "Paraná"
+		"Nome": "Paraná",
+		"Capital": "Curitiba",
+		"Zone": "Sul"
 	},
 	{
 		"ID": "19",
 		"Sigla": "RJ",
-		"Nome": "Rio de Janeiro"
+		"Nome": "Rio de Janeiro",
+		"Capital": "Rio de Janeiro",
+		"Zone": "Sudeste"
 	},
 	{
 		"ID": "20",
 		"Sigla": "RN",
-		"Nome": "Rio Grande do Norte"
+		"Nome": "Rio Grande do Norte",
+		"Capital": "Natal",
+		"Zone": "Nordeste"
 	},
 	{
 		"ID": "21",
 		"Sigla": "RO",
-		"Nome": "Rondônia"
+		"Nome": "Rondônia",
+		"Capital": "Porto Velho",
+		"Zone": "Norte"
 	},
 	{
 		"ID": "22",
 		"Sigla": "RR",
-		"Nome": "Roraima"
+		"Nome": "Roraima",
+		"Capital": "Boa Vista",
+		"Zone": "Norte"
 	},
 	{
 		"ID": "23",
 		"Sigla": "RS",
-		"Nome": "Rio Grande do Sul"
+		"Nome": "Rio Grande do Sul",
+		"Capital": "Porto Alegre",
+		"Zone": "Sul"
 	},
 	{
 		"ID": "24",
 		"Sigla": "SC",
-		"Nome": "Santa Catarina"
+		"Nome": "Santa Catarina",
+		"Capital": "Florianópolis",
+		"Zone": "Sul"
 	},
 	{
 		"ID": "25",
 		"Sigla": "SE",
-		"Nome": "Sergipe"
+		"Nome": "Sergipe",
+		"Capital": "Aracajú",
+		"Zone": "Nordeste"
 	},
 	{
 		"ID": "26",
 		"Sigla": "SP",
-		"Nome": "São Paulo"
+		"Nome": "São Paulo",
+		"Capital": "São Paulo",
+		"Zone": "Sudeste"
 	},
 	{
 		"ID": "27",
 		"Sigla": "TO",
-		"Nome": "Tocantins"
+		"Nome": "Tocantins",
+		"Capital": "Palmas",
+		"Zone": "Norte"
 	}
 ]

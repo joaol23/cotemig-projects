@@ -9,7 +9,9 @@ export interface FileInterface {
 interface State {
     ID: string,
     Sigla: string,
-    Nome: string
+    Nome: string,
+    Capital: string,
+    Zone: string,
 }
 
 export type City = {
