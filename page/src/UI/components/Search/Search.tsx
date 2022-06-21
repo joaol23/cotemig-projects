@@ -32,9 +32,11 @@ export function SearchComponent({ onChange, files, options }: SearchProps) {
 
     const checkEachItemFilter = (data: any, search: string, option: string | Array<string>): boolean => {
         if (Array.isArray(option)) {
-            let teste = option[0];
-            let teste2 = option[1];
-            return TextService.removeAccent(data[teste][teste2].toUpperCase()).includes(search)
+            let choosenData = data;
+            option.forEach(eachOption => {
+                choosenData = choosenData[eachOption]
+            })
+            return TextService.removeAccent(choosenData.toUpperCase()).includes(search)
         }
         return TextService.removeAccent(data[option].toUpperCase()).includes(search);
     }
