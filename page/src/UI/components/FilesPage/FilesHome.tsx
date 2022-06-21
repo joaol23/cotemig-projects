@@ -15,10 +15,9 @@ export function FilesPage() {
       .then((data) => { setDataFiles(data.files); setDatafilesDataBase(data.files); });
   }, []);
 
-  function changeValueFiles(newValue?: FileInterface[]): void {
+  function changeValueFiles(newValue?: FileInterface[]): void {    
     setDataFiles(() => newValue);
   }
-
 
   return (
     <Container>

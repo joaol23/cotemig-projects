@@ -5,6 +5,7 @@ import { Button } from "@mui/material"
 import MobiledataOffIcon from '@mui/icons-material/MobiledataOff';
 import { Link } from 'react-router-dom';
 import { ColoursService } from '../../../data/services/Colours/Colours';
+import { useState } from "react";
 
 type FilesProps = {
     files?: FileInterface[],
@@ -35,7 +36,7 @@ export function Files({ files, changeDataFiles }: FilesProps) {
 
     return (
         <ContainerAll>
-            <Button variant={'contained'} disabled title="Não ta funcionando :(" color="secondary" onClick={changeOrderFiles} startIcon={<MobiledataOffIcon />}>Cidades</Button>
+            <Button variant={'contained'} title="Não ta funcionando :(" color="secondary" onClick={changeOrderFiles} startIcon={<MobiledataOffIcon />}>Cidades</Button>
             <FilesContainer>
                 {
                     (!files ? '' : files.map(file => {
