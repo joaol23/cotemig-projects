@@ -4,7 +4,7 @@ import { TextService } from '../../../data/services/Text/Text';
 type SearchProps = {
     files?: any[],
     onChange: (newData?: any[]) => void,
-    options?: any
+    options?: Array<string> | (Array<string | Array<string>>) | Array<Array<string>>
 }
 
 export function SearchComponent({ onChange, files, options }: SearchProps) {
