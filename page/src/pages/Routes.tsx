@@ -4,6 +4,8 @@ import { FilesPage } from "../UI/components/FilesPage/FilesHome";
 import { DetailsPage } from "../UI/components/DetailsFile/DetailsFiles";
 import { Header } from '../UI/components/Header/Header';
 import { Home } from '../UI/components/Home/Home';
+import { MemeGenerator } from "../UI/components/MemeGenerator/MemeGenerator";
+import { Error } from '../UI/components/Error/Error';
 
 export const Maps = () => {
     return (
@@ -15,6 +17,8 @@ export const Maps = () => {
                 <Route path="/details-file" element={<DetailsPage />}>
                     <Route path=":id" element={<DetailsPage />} />
                 </Route>
+                <Route path='/meme-generator' element={<MemeGenerator />} />
+                <Route path="*" element={ <Error/> } />
             </Routes>
         </BrowserRouter>
     )
