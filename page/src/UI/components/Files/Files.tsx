@@ -13,7 +13,8 @@ type FilesProps = {
 }
 
 export function Files({ files, changeDataFiles }: FilesProps) {
-    let switchOrder = false;
+    const [switchOrder, changeOrder] = useState<boolean>(true);
+
     const compare = (a: FileInterface, b: FileInterface) => {
         let comparison = 0;
         if (a.countCities > b.countCities) {
@@ -25,11 +26,11 @@ export function Files({ files, changeDataFiles }: FilesProps) {
         return comparison;
     }
 
-    function changeOrderFiles() {
+    function changeOrderFiles() {        
         if (files) {
-            switchOrder = !switchOrder;
+            changeOrder(!switchOrder)
             files.map(file => file.order = (switchOrder ? "ASC" : "DESC"));
-            let newFiles = files.sort(compare);
+            let newFiles = [...files].sort(compare);
             changeDataFiles(newFiles);
         }
     }
@@ -44,7 +45,7 @@ export function Files({ files, changeDataFiles }: FilesProps) {
                             <Link to={'/details-file/' + file.fileState.ID} key={file.fileState.ID} style={{ textDecoration: 'none', color: '#000000' }}>
                                 <File>
                                     <ImageFile src={"images/" + ImageService.getImageName(file.type)} />
-                                    <InfoContainer style={{ backgroundColor: ColoursService.getColourByZone(file.fileState.Zone)}}>
+                                    <InfoContainer style={{ backgroundColor: ColoursService.getColourByZone(file.fileState.Zone) }}>
                                         <SideInfoContainer>
                                             <TextFile>{file.fileName}</TextFile>
                                             <TextFile>Cidades: {file.countCities}</TextFile>
