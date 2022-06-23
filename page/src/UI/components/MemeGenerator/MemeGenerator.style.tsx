@@ -24,6 +24,7 @@ export const Image = styled('img')`
 `
 export const ContainerFull = styled('div')`
     width: 100%;
+    margin: 25px auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,5 +34,6 @@ export const ImageFull = styled('img')`
     max-width: 100%;
     height: 100%;
     max-height: 500px;
+    position: relative;
     box-shadow: 2px 2px 5px gray;
 `
