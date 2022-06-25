@@ -30,10 +30,35 @@ export const ContainerFull = styled('div')`
     align-items: center;
 `
 
+export const ContainerImage = styled('div')`
+    max-width: 100%;
+    height: 100%;
+    max-height: 500px;
+    position: relative;    
+`
+
+export const LegendMeme = styled('div')`
+    position: absolute;
+`
+
 export const ImageFull = styled('img')`
     max-width: 100%;
     height: 100%;
     max-height: 500px;
     position: relative;
     box-shadow: 2px 2px 5px gray;
+`
+export const ModalBody = styled('div')`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 `
