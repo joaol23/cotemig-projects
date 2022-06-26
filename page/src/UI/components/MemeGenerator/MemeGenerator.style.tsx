@@ -37,7 +37,7 @@ export const ContainerImage = styled('div')`
     position: relative;    
 `
 
-export const LegendMeme = styled('div')`
+export const CaptionMeme = styled('div')`
     position: absolute;
 `
 
@@ -61,4 +61,11 @@ export const ModalBody = styled('div')`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+`
+
+export const InputMeme = styled('input')`
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 10px;
 `
