@@ -15,7 +15,6 @@
     "@types/node": "^16.11.39",
     "@types/react": "^18.0.12",
     "@types/react-dom": "^18.0.5",
-    "nth-check": ">=2.0.1",
     "react": "^18.1.0",
     "react-colorful": "^5.5.1",
     "react-dom": "^18.1.0",
@@ -23,6 +22,9 @@
     "react-scripts": "5.0.1",
     "typescript": "^4.7.3",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "nth-check": ">=2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
