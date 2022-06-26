@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Container, Image, ImageFull, ColW6, ContainerFull, ContainerImage, InputMeme, CaptionMeme, ModalBody } from './MemeGenerator.style';
 import { Meme, CaptionTextMeme } from '../../../data/@types/MemesInterface';
-import { Button, Modal } from '@mui/material';
+import { Button, FormControl, InputLabel, MenuItem, Modal, Select } from '@mui/material';
 import { HexColorPicker } from "react-colorful";
+import { toast } from 'react-toastify';
 
 const scrollToRef = (ref: any) => !ref ? '' : window.scrollTo(0, ref.current.offsetTop)
 
@@ -41,6 +42,7 @@ export function MemeGenerator() {
         fontSize: 0
     };
 
+
     const highLightMeme = (event: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
         if (!memes) {
             return;
@@ -72,6 +74,7 @@ export function MemeGenerator() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ data: captionFake, fileName: 'captionMemes.json' })
         });
+        toast.success('Legenda adicionada!');
         getCaptions(idImage);
     }
 
@@ -81,15 +84,30 @@ export function MemeGenerator() {
         }
 
         let caption = inputCaption.current.value;
+        if (caption == '') {
+            toast.error('Coloque um texto!');
+            return;
+        }
         let idImage = parseInt(inputIdImage.current.value);
 
         captionFake.text = caption;
         captionFake.position.y = positionLegend.y;
         captionFake.position.x = positionLegend.x;
         captionFake.idImage = idImage;
-        captionFake.fontSize = 12;
+
+        if (captionFake.fontSize == 0) {
+            toast.error('Coloque um tamanho!');
+            return;
+        }
+
         insertCaptionMeme(inputIdImage.current.value);
         setOpenModal(false)
+    }
+
+    let options = [];
+
+    for (let i = 1; i <= 24; i++) {
+        options.push(<MenuItem key={i} value={i}>{i} px</MenuItem>);
     }
 
     return (
@@ -98,6 +116,7 @@ export function MemeGenerator() {
                 {
                     !meme ? <ContainerFull ref={myRef} /> : (
                         <ContainerFull ref={myRef}>
+                            <h2 style={{ color: 'black' }}>{meme.name}</h2>
                             <ContainerImage>
                                 <ImageFull onClick={createCaptionMeme} src={meme.url} />
                                 {
@@ -123,12 +142,27 @@ export function MemeGenerator() {
                 onClose={() => setOpenModal(false)}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description">
-                <ModalBody  >
+                <ModalBody>
                     <h2>Crie sua legenda:</h2>
                     <InputMeme ref={inputCaption} type="text" defaultValue={''} name="legendMeme" />
-                    <div>
+                    <>
                         <HexColorPicker style={{ margin: '10px auto' }} color="white" onChange={color => captionFake.color = color} />
-                    </div>
+                        <FormControl fullWidth>
+                            <InputLabel id="demo-simple-select-label">Font-size</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                label="Font-size"
+                                defaultValue={0}
+                                onChange={value => captionFake.fontSize = (value.target.value as number)}
+                            >
+                                <MenuItem value={0}>Escolha um tamanho para a legenda</MenuItem>
+                                {
+                                    options.map(option => option)
+                                }
+                            </Select>
+                        </FormControl>
+                    </>
                     <input ref={inputIdImage} type="hidden" defaultValue={!meme ? '' : meme.id} />
                     <Button onClick={makeCaptionMeme} style={{ margin: '10px 0' }} variant="contained" color="success">criar</Button>
                 </ModalBody>
