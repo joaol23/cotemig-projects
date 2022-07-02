@@ -6,14 +6,12 @@ import { Header } from './UI/components/Header';
 import { Home } from './pages/Home';
 import { Memes } from "./pages/memes";
 import { Error } from './UI/components/Error';
-import App from "./pages/App";
 
 export const Maps = () => {
     return (
         <BrowserRouter>
             <Header />
             <Routes>
-                <Route path="/*" element={<App />}/>
                 <Route path='/' element={<Home />} />
                 <Route path='/states' element={<FilesPage />} />
                 <Route path="/details-state" element={<DetailsPage />}>
