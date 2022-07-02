@@ -10,10 +10,12 @@ import * as url from 'url';
 import { insertItemFile } from './handleFiles/writeFiles.js';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
+import ReactDOM from 'react-dom/server';
+
 const PORT = process.env.PORT || 3001;
 
 const app = express();
-app.use(express.static(path.resolve(__dirname, '../page/src/pages')));
+app.use(express.static(path.resolve(__dirname, '../page/build')));
 
 app.get("/arquivos-estados", async (req, res) => {
   await checkFilesExists()
@@ -41,6 +43,7 @@ app.get("/arquivo-detalhes/:id", async (req, res) => {
 })
 
 app.use(express.json());
+app.use(express.static("page/src/pages"));
 
 app.post("/insert-item", async (req, res) => {
   const data = req.body.data;
