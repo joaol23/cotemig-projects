@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { Container, Image, ImageFull, ColW6, ContainerFull, ContainerImage, InputMeme, CaptionMeme, ModalBody } from './MemeGenerator.style';
-import { Meme, CaptionTextMeme } from '../../../data/@types/MemesInterface';
+import { Container, Image, ImageFull, ColW6, ContainerFull, ContainerImage, InputMeme, CaptionMeme, ModalBody } from './style';
+import { Meme, CaptionTextMeme } from '../../data/@types/MemesInterface';
 import { Button, FormControl, InputLabel, MenuItem, Modal, Select } from '@mui/material';
 import { HexColorPicker } from "react-colorful";
 import { toast } from 'react-toastify';
@@ -12,7 +12,7 @@ type positionText = {
     y: number
 }
 
-export function MemeGenerator() {
+export function Memes() {
     const URL_MEMES = "https://api.imgflip.com/get_memes";
     const [memes, setDataMemes] = useState<Meme[]>()
     const [meme, setDataMeme] = useState<Meme>()

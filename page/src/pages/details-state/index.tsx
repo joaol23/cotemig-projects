@@ -1,6 +1,6 @@
-import { Container, Content } from "./DetailsFiles.style";
+import { Container, Content } from "./style";
 import { useParams } from 'react-router';
-import { City } from "../../../data/@types/FileInterface";
+import { City } from "../../data/@types/FileInterface";
 import React from "react";
 
 export function DetailsPage() {

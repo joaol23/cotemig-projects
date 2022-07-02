@@ -1,4 +1,4 @@
-import { Search, TextFilter, FilterContainer } from "./Search.style";
+import { Search, TextFilter, FilterContainer } from "./style";
 import { TextService } from '../../../data/services/Text/Text';
 
 type SearchProps = {

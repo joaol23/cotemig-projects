@@ -1,7 +1,7 @@
-import { Container, LinksMenu, ImageMenu, ContainerInfo, TitleMenu } from './Home.style'
+import { Container, LinksMenu, ImageMenu, ContainerInfo, TitleMenu } from './style'
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { LinkMenu } from '../../../data/@types/MenuInterface'
+import { LinkMenu } from '../../data/@types/MenuInterface'
 
 export function Home() {
     const [linksMenu, setDatalinksMenu] = useState<LinkMenu[]>();

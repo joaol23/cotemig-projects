@@ -1,4 +1,4 @@
-import { ContainerAll, FilesContainer, File, ImageFile, SideInfoContainer, InfoContainer, TextFile } from "./Files.style";
+import { ContainerAll, FilesContainer, File, ImageFile, SideInfoContainer, InfoContainer, TextFile } from "./style";
 import { FileInterface } from "../../../data/@types/FileInterface";
 import { ImageService } from "../../../data/services/Images/Images";
 import { Button } from "@mui/material"
@@ -42,7 +42,7 @@ export function Files({ files, changeDataFiles }: FilesProps) {
                 {
                     (!files ? '' : files.map(file => {
                         return (
-                            <Link to={'/details-file/' + file.fileState.ID} key={file.fileState.ID} style={{ textDecoration: 'none', color: '#000000' }}>
+                            <Link to={'/details-state/' + file.fileState.ID} key={file.fileState.ID} style={{ textDecoration: 'none', color: '#000000' }}>
                                 <File>
                                     <ImageFile src={"images/" + ImageService.getImageName(file.type)} />
                                     <InfoContainer style={{ backgroundColor: ColoursService.getColourByZone(file.fileState.Zone) }}>

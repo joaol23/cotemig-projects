@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { HeaderContainer, Logo, LogoContainer } from './Header.style';
+import { HeaderContainer, Logo, LogoContainer } from './style';
 
 export function Header() {
     return (

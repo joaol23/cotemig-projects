@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Files } from "../Files/Files";
-import { SearchComponent } from "../Search/Search";
-import { FileInterface } from "../../../data/@types/FileInterface";
-import { Container } from './FilesHome.style';
+import { Files } from "../../UI/components/Files";
+import { SearchComponent } from "../../UI/components/Search";
+import { FileInterface } from "../../data/@types/FileInterface";
+import { Container } from './style';
 
 
 export function FilesPage() {

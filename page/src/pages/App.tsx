@@ -1,5 +1,5 @@
 import './App.css';
-import { Maps } from './Routes';
+import { Maps } from '../Routes';
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
