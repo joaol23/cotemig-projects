@@ -10,6 +10,7 @@ import * as url from 'url';
 import { insertItemFile } from './handleFiles/writeFiles.js';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
+import ReactDOM from 'react-dom/server';
 
 const PORT = process.env.PORT || 3001;
 
@@ -39,6 +40,21 @@ app.get("/arquivo-detalhes/:id", async (req, res) => {
   const path = await getPathFileById(idFile);
   const contentFile = await readFile(path);
   res.json({ contentFile: contentFile });
+})
+
+app.get("/states", async (req, res) => {
+
+  const html = `
+      <html>
+          <head>
+              <title>Quiz Wall</title>
+          </head>
+          <body>
+              <div id="react-view">teste</div>
+          </body>
+      </html>
+  `;
+  res.end(html)
 })
 
 app.use(express.json());
