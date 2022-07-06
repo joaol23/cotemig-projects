@@ -2,6 +2,8 @@ import { createRequire } from 'module'
 import { pathMenu, pathMemesCaption } from './database/api/config.js'
 const require = createRequire(import.meta.url);
 
+import { routePokemon } from './routes/pokemons.js';
+
 const path = require('path');
 const express = require("express");
 
@@ -10,7 +12,6 @@ import * as url from 'url';
 import { insertItemFile } from './handleFiles/writeFiles.js';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
-import ReactDOM from 'react-dom/server';
 
 const PORT = process.env.PORT || 3001;
 
@@ -61,6 +62,14 @@ app.post("/insert-item", async (req, res) => {
     message: 'Adicionado com sucesso!'
   });
 })
+
+routePokemon(app);
+
+// routes.map(route => {
+//   app[route.method](route.path, async (req, res) => {
+//     res.send('med')
+//   })
+// })
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);

@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 
-export function App() {
+ function App() {
   return (
     <div className="App">
       <header className="App-header aa">
